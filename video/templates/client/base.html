@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>${self.title()}</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=3,minimum-scale=1,user-scalable=no" />
-    <link href="/static/client/css/base.css" rel="stylesheet" />
+    <link href="/static/client/css/new_base.css" rel="stylesheet" />
     ${self.css()}
 </head>
 <body>
@@ -16,10 +16,10 @@ ${self.content()}
 <footer class="footer-scroll">
 <ul>
     <li><a href="${reverse('client_ex_video')}">All</a></li>
-    <li><a href="${reverse('client_cus_video')}">Movie</a></li>
-    <li><a href="${reverse('client_cus_video')}">Episode</a></li>
-    <li><a href="${reverse('client_cus_video')}">News</a></li>
-    <li><a href="${reverse('client_cus_video')}">Variety</a></li>
+    <li><a href="${reverse('client_movie_video')}">Movie</a></li>
+    <li><a href="${reverse('client_ep_video')}">Episode</a></li>
+    <li><a href="${reverse('client_news_video')}">News</a></li>
+    <li><a href="${reverse('client_variety_video')}">Shows</a></li>
     <li><a href="${reverse('client_cus_video')}">Cartoon</a></li>
     <li><a href="${reverse('client_auth')}">My</a></li>
 </ul>

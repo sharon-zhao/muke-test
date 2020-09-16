@@ -17,7 +17,6 @@ body {
 
 header, footer {
   overflow: scroll;
-
   width: 100%;
   background: #000000;
   color: green;
@@ -25,16 +24,6 @@ header, footer {
   text-align: center;
   line-height: 5rem;
   font-size: 2rem;
-}
-
-footer ul {
-  overflow-y:hidden;
-  overflow-x:scroll;
-
-}
-
-footer ul li{
-  display:inline-block;
 }
 
 .base-content {
