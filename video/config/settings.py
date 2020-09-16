@@ -136,7 +136,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 # qiniu
-QINIU_AK = 'cw6a94uKsuZNkz8S_jwQYa5FTU2bd8m2Z6s-E_BI'
-QINIU_SK = 'J8Dx-U6uTL-a1KMOgLwJSg8KeyhQX9yo_IbTlYUg'
-QINIU_VIDEO = 'sharontodd'
-QINIU_VIDEO_URL = 'http://qgptlcn53.hb-bkt.clouddn.com'
+QINIU_AK =
+QINIU_SK =
+QINIU_VIDEO =
+QINIU_VIDEO_URL = 
