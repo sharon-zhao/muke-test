@@ -32,17 +32,17 @@ class Login(View):
         data = {}
 
         exists = User.objects.filter(username=username).exists()
-        data['error'] = '没有该用户'
+        data['error'] = 'No such user'
         if not exists:
             return render_to_response(request, self.TEMPLATE, data)
         user = authenticate(username=username, password=password)
 
         if not user:
-            data['error'] = '密码错误'
+            data['error'] = 'Wrong password'
             return render_to_response(request, self.TEMPLATE, data=data)
 
         if not user.is_superuser:
-            data['error'] = '你无权登录'
+            data['error'] = 'You do not have permission to log in'
             return render_to_response(request, self.TEMPLATE, data=data)
 
         login(request, user)

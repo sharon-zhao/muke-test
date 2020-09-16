@@ -43,20 +43,20 @@ class ExternaVideo(View):
             reverse_path = reverse('externa_video')
 
         if not all([name, image, video_type, from_to, nationality, info]):
-            return redirect('{}?error={}'.format(reverse_path, '缺少必要字段'))
+            return redirect('{}?error={}'.format(reverse_path, 'Required fields are missing'))
 
         result = check_and_get_video_type(
-            VideoType, video_type, '非法的视频类型')
+            VideoType, video_type, 'Illegal video type')
         if result.get('code') != 0:
             return redirect('{}?error={}'.format(reverse_path, result['msg']))
 
         result = check_and_get_video_type(
-            FromType, from_to, '非法的来源')
+            FromType, from_to, 'Illegal source')
         if result.get('code') != 0:
             return redirect('{}?error={}'.format(reverse_path, result['msg']))
 
         result = check_and_get_video_type(
-            NationalityType, nationality, '非法的国籍')
+            NationalityType, nationality, 'Illegal nationality')
         if result.get('code') != 0:
             return redirect('{}?error={}'.format(reverse_path, result['msg']))
 
@@ -71,7 +71,7 @@ class ExternaVideo(View):
                     info=info
                 )
             except:
-                return redirect('{}?error={}'.format(reverse_path, '创建失败'))
+                return redirect('{}?error={}'.format(reverse_path, 'Creation failed'))
         else:
             try:
                 video = Video.objects.get(pk=video_id)
@@ -83,7 +83,7 @@ class ExternaVideo(View):
                 video.info = info
                 video.save()
             except:
-                return redirect('{}?error={}'.format(reverse_path, '修改失败'))
+                return redirect('{}?error={}'.format(reverse_path, 'Fail to edit'))
         return redirect(reverse('externa_video'))
 
 
@@ -117,7 +117,7 @@ class VideoSubView(View):
         url_format = reverse('video_sub', kwargs={'video_id': video_id})
 
         if not all([url, number]):
-            return redirect('{}?error={}'.format(url_format, '缺少必要字段'))
+            return redirect('{}?error={}'.format(url_format, 'Required fields are missing'))
 
         if FromType(video.from_to) == FromType.custom:
             handle_video(url, video_id, number)
@@ -127,7 +127,7 @@ class VideoSubView(View):
             try:
                 VideoSub.objects.create(video=video, url=url, number=number)
             except:
-                return redirect('{}?error={}'.format(url_format, '创建失败'))
+                return redirect('{}?error={}'.format(url_format, 'Creation failed'))
         else:
             video_sub = VideoSub.objects.get(pk=videosub_id)
             try:
@@ -135,7 +135,7 @@ class VideoSubView(View):
                 video_sub.number = number
                 video_sub.save()
             except:
-                return redirect('{}?error={}'.format(url_format, '修改失败'))
+                return redirect('{}?error={}'.format(url_format, 'Fail to edit'))
         return redirect(reverse('video_sub', kwargs={'video_id': video_id}))
 
 
@@ -149,10 +149,10 @@ class VideoStarView(View):
         path_format = '{}'.format(reverse('video_sub', kwargs={'video_id': video_id}))
 
         if not all([name, identity, video_id]):
-            return redirect('{}?error={}'.format(path_format, '缺少必要字段'))
+            return redirect('{}?error={}'.format(path_format, 'Required fields are missing'))
 
         result = check_and_get_video_type(
-            IdentityType, identity, '非法的身份')
+            IdentityType, identity, 'Illegal identity')
 
         if result.get('code') != 0:
             return redirect('{}?error={}'.format(path_format, result['msg']))
@@ -165,7 +165,7 @@ class VideoStarView(View):
                 identity=identity
             )
         except:
-            return redirect('{}?error={}'.format(path_format, '创建失败'))
+            return redirect('{}?error={}'.format(path_format, 'Creation failed'))
 
         return redirect(reverse('video_sub', kwargs={'video_id': video_id}))
 

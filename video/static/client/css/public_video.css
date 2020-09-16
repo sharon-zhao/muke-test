@@ -6,8 +6,7 @@
 }
 
 .video-image {
-  width: 100%;
-  height: 10rem;
+  height: 8.5rem;
 }
 
 .video-name {
@@ -17,4 +16,8 @@
  white-space: nowrap;
  text-overflow: ellipsis;
  overflow: hidden;
+}
+
+.try {
+ margin: 5px
 }

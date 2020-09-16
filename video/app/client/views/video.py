@@ -37,5 +37,4 @@ class VideoSub(View):
 
         data = {'video': video, 'user': user, 'comments': comments}
 
-        print(data)
         return render_to_response(request, self.TEMPLATE, data=data)

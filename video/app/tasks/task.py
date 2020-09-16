@@ -7,7 +7,6 @@ from celery import task
 from app.libs.base_qiniu import video_qiniu
 from app.models import Video, VideoSub
 
-
 @task
 def video_task(command, out_path, path_name,
                video_file_name, video_sub_id):

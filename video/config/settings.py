@@ -84,12 +84,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'muke_video',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': 3306
+     'ENGINE': 'django.db.backends.sqlite3',
+     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'muke_video',
+        # 'USER': 'root',
+        # 'PASSWORD': '',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': 3306
     }
 }
 
@@ -116,9 +118,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'zh-hans'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -134,7 +136,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 # qiniu
-QINIU_AK = 'j2A01V8ZS0AVdxU1gRv4Pep6ImSUR10-riuvpCWI'
-QINIU_SK = 'JmfvJ9nfTRU6V38rK0XZ15RYxQyS2pxHm274-Lg8'
-QINIU_VIDEO = 'video_muke'
-QINIU_VIDEO_URL = 'http://ppjbecvym.bkt.clouddn.com'
+QINIU_AK = 'cw6a94uKsuZNkz8S_jwQYa5FTU2bd8m2Z6s-E_BI'
+QINIU_SK = 'J8Dx-U6uTL-a1KMOgLwJSg8KeyhQX9yo_IbTlYUg'
+QINIU_VIDEO = 'sharontodd'
+QINIU_VIDEO_URL = 'http://qgptlcn53.hb-bkt.clouddn.com'

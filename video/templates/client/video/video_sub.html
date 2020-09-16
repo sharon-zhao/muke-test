@@ -7,9 +7,9 @@ from app.utils.permission import client_auth
 %>
 <img src="${video.image}" class="video-image" />
 <div class="data">
-    <p><span class="span">名称:</span><br />${video.name}</p>
+    <p><span class="span">Name:</span><br />${video.name}</p>
     <p>
-        <span class="span">演员:</span>
+        <span class="span">Actors:</span>
         <ul>
         % for man in video.video_star.all():
           <li>${man.name}:${man.ident}</li>
@@ -17,34 +17,34 @@ from app.utils.permission import client_auth
         </ul>
     </p>
     <p>
-        <span class="span">简介:</span><br />
+        <span class="span">Summary:</span><br />
         <span class="info">${video.info}</span>
     </p>
     <p>
-        <span class="span">选集:</span><br />
+        <span class="span">Choose episode:</span><br />
         % if FromType(video.from_to) == FromType.custom and not client_auth(request):
-        <a href="${reverse('client_auth')}">请您登录</a>
+        <a href="${reverse('client_auth')}">Login</a>
         % else:
         <ul class="number-ul">
         % for data in video.video_sub.all():
-          <li><a href="${data.url}">第${data.number}集</a></li>
+          <li><a href="${data.url}">${data.number}</a></li>
         % endfor
         </ul>
         % endif
     </p>
     <p>
-        <span class="span">评论区域</span><br />
+        <span class="span">Comment Area</span><br />
         <div class="comment-area">
           % if user:
           <textarea id="comment-content"></textarea>${csrf_token}
-          <button id="comment-submit" data-url="${reverse('client_add_comment')}" data-user-id="${user.id}" data-video-id="${video.id}">提交</button>
+          <button id="comment-submit" data-url="${reverse('client_add_comment')}" data-user-id="${user.id}" data-video-id="${video.id}">Submit</button>
           % else:
-          <a href="${reverse('client_auth')}">登录后可评论</a>
+          <a href="${reverse('client_auth')}">Comment after login</a>
           % endif
         </div>
     </p>
     <div class="comment-show-area">
-        <span class="span">评论展示</span>
+        <span class="span">Comment display</span>
         <div id="ajax-comment-show"></div>
         <ul class="comment-show">
           % for comment in comments:

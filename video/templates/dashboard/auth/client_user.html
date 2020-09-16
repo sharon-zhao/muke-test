@@ -1,14 +1,14 @@
 <%inherit file="../base.html" />
 <%! from django.shortcuts import reverse %>
 <%def name="content()">
-<h1>用户模块</h1>
+<h1>User Module</h1>
 <table class="table">
     <thead>
       <tr>
-          <th>用户名</th>
-          <th>状态</th>
-          <th>创建时间</th>
-          <th>控制</th>
+          <th>Username</th>
+          <th>Status</th>
+          <th>Created Time</th>
+          <th>Control</th>
       </tr>
     </thead>
     <tbody>
@@ -19,9 +19,9 @@
         <td>${user.created_time}</td>
         <td>
             % if user.status:
-            <button data-url="${reverse('dashboard_client_user')}" data-user-id="${user.id}" id="user-status-submit">冻结</button>
+            <button data-url="${reverse('dashboard_client_user')}" data-user-id="${user.id}" id="user-status-submit">Freeze</button>
             % else:
-            <button data-url="${reverse('dashboard_client_user')}" data-user-id="${user.id}" id="user-status-submit">恢复</button>
+            <button data-url="${reverse('dashboard_client_user')}" data-user-id="${user.id}" id="user-status-submit">Restore</button>
             % endif
             ${csrf_token}
         </td>

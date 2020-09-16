@@ -15,7 +15,7 @@ class CommentView(View):
         video_id = request.POST.get('videoId', '')
 
         if not all([content, user_id, video_id]):
-            return JsonResponse({'code': -1, 'msg': '缺少必要字段'})
+            return JsonResponse({'code': -1, 'msg': 'Required fields are missing'})
 
         video = Video.objects.get(pk=int(video_id))
         user = ClientUser.objects.get(pk=int(user_id))

@@ -9,15 +9,19 @@
 </head>
 <body>
 <%! from django.shortcuts import reverse %>
-<header>导航</header>
+<header>NAVIGATION</header>
 <div class="base-content">
 ${self.content()}
 </div>
-<footer>
+<footer class="footer-scroll">
 <ul>
-    <li><a href="${reverse('client_ex_video')}">外链</a></li>
-    <li><a href="${reverse('client_cus_video')}">内链</a></li>
-    <li><a href="${reverse('client_auth')}">我的</a></li>
+    <li><a href="${reverse('client_ex_video')}">All</a></li>
+    <li><a href="${reverse('client_cus_video')}">Movie</a></li>
+    <li><a href="${reverse('client_cus_video')}">Episode</a></li>
+    <li><a href="${reverse('client_cus_video')}">News</a></li>
+    <li><a href="${reverse('client_cus_video')}">Variety</a></li>
+    <li><a href="${reverse('client_cus_video')}">Cartoon</a></li>
+    <li><a href="${reverse('client_auth')}">My</a></li>
 </ul>
 </footer>
 </body>

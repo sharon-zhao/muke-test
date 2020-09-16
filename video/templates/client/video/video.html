@@ -4,9 +4,9 @@
 % for video in videos:
 <div class="video-show">
     <a href="${reverse('client_video_sub', kwargs={'video_id': video.id})}">
-      <div class="video-image" style="background-image:url(${video.image});background-size:cover;background-position:center;"></div>
+      <div class="video-image" style="background-image:url(${video.image});background-size:cover;background-position:center;margin-right:5px;margin-left:5px;"></div>
     </a>
-    <p class="video-name">${video.name}</p>
+    <p class="video-name"><a href="${reverse('client_video_sub', kwargs={'video_id': video.id})}">${video.name}</a></p>
 </div>
 % endfor
 </%def>

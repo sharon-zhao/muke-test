@@ -5,20 +5,20 @@
   prev_page = '{}?page={}'.format(reverse('admin_manger'), page_num - 1)
   next_page = '{}?page={}'.format(reverse('admin_manger'), page_num + 1)
 %>
-<h1>管理员模块</h1>
+<h1>Administrator Module</h1>
 % if page_num > 1:
-<a href="${prev_page}">上一页</a>
+<a href="${prev_page}">previous</a>
 % endif
 % if page_num < total:
- <a href="${next_page}">下一页</a>
+ <a href="${next_page}">next</a>
 % endif
 <table class="table">
     <thead>
       <tr>
-          <th>用户名</th>
-          <th>状态</th>
-          <th>创建时间</th>
-          <th>编辑</th>
+          <th>Username</th>
+          <th>Status</th>
+          <th>Created Time</th>
+          <th>Edit</th>
       </tr>
     </thead>
     <tbody>
@@ -28,9 +28,9 @@
         <td>${user.is_superuser}</td>
         <td>${user.date_joined}</td>
         % if user.is_superuser:
-        <td><a href="${reverse('admin_update_status')}?status=off">取消管理员</a></td>
+        <td><a href="${reverse('admin_update_status')}?status=off">Cancel an administrator</a></td>
         % else:
-        <td><a href="${reverse('admin_update_status')}?status=on">成为管理员</a></td>
+        <td><a href="${reverse('admin_update_status')}?status=on">Become an administrator</a></td>
         % endif
             </tr>
         % endfor

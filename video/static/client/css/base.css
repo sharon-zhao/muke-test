@@ -16,44 +16,25 @@ body {
 }
 
 header, footer {
+  overflow: scroll;
+
   width: 100%;
   background: #000000;
   color: green;
   height: 3rem;
   text-align: center;
-  line-height: 3rem;
+  line-height: 5rem;
   font-size: 2rem;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-}
-
 footer ul {
-  list-style: none;
-  width: 100%;
-  zoom: 1;
-  height: 3rem;
+  overflow-y:hidden;
+  overflow-x:scroll;
+
 }
 
-footer ul:alter {
-  display: block;
-  content: '';
-  clear: both;
-}
-
-footer ul li {
-  float: left;
-  width: 33%;
-  text-align: center;
-}
-
-footer ul li a {
-    color: green;
-    text-decoration: none;
+footer ul li{
+  display:inline-block;
 }
 
 .base-content {

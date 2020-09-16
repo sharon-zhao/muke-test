@@ -9,45 +9,49 @@ class VideoType(Enum):
     cartoon = 'cartoon'
     episode = 'episode'
     variety = 'variety'
+    news = 'news'
     other = 'other'
 
-VideoType.movie.label = '电影'
-VideoType.cartoon.label = '动漫'
-VideoType.episode.label = '剧集'
-VideoType.variety.label = '综艺'
-VideoType.other.label = '其他'
+VideoType.movie.label = 'Movie'
+VideoType.cartoon.label = 'Cartoon'
+VideoType.episode.label = 'Episode'
+VideoType.variety.label = 'Variety'
+VideoType.news.label = 'News'
+VideoType.other.label = 'Other'
 
 
 class FromType(Enum):
     youku = 'youku'
+    youtube = 'youtube'
     custom = 'custom'
-
-FromType.youku.label = '优酷'
-FromType.custom.label = '自制'
+FromType.youku.label = 'youku'
+FromType.youtube.label = 'youtube'
+FromType.custom.label = 'custom'
 
 
 class NationalityType(Enum):
     china = 'china'
     japan = 'japan'
     korea = 'korea'
+    europe = 'europe'
     america = 'america'
     other = 'other'
 
-NationalityType.china.label = '中国'
-NationalityType.japan.label = '日本'
-NationalityType.korea.label = '韩国'
-NationalityType.america.label = '美国'
-NationalityType.other.label = '其他'
-
+NationalityType.america.label = 'America'
+NationalityType.europe.label = 'Europe'
+NationalityType.china.label = 'China'
+NationalityType.japan.label = 'Japan'
+NationalityType.korea.label = 'Korea'
+NationalityType.other.label = 'other'
 
 class IdentityType(Enum):
-    to_star = 'to_star'
+    lead_actor = 'lead_actor'
     supporting_rule = 'supporting_rule'
     director = 'director'
 
-IdentityType.to_star.label = '主演'
-IdentityType.supporting_rule.label = '配角'
-IdentityType.director.label = '导演'
+IdentityType.lead_actor.label = 'Lead Actor'
+IdentityType.supporting_rule.label = 'Supporting Rule'
+IdentityType.director.label = 'Director'
 
 
 class Video(models.Model):
