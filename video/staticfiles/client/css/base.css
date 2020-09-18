@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  background: #ffffff;
+}
+
+body {
+  max-width: 640px;
+  position: relative;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+header, footer {
+  overflow: scroll;
+  width: 100%;
+  background: #000000;
+  color: green;
+  height: 3rem;
+  text-align: center;
+  line-height: 5rem;
+  font-size: 2rem;
+}
+
+.base-content {
+  width: 100%;
+  zoom: 1;
+}
+
+.base-content:after {
+  display: block;
+  content: '';
+  clear: both
+}
