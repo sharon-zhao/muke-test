@@ -13,7 +13,7 @@ def dashboard_auth(func):
     def wrapper(self, request, *args, **kwargs):
 
         user = request.user
-
+        print(f'permission request: {request.user}')
         if not user.is_authenticated or not user.is_superuser:
             return redirect('{}?to={}'.format(reverse('login'), request.path))
 

@@ -22,6 +22,7 @@ class Login(View):
         to = request.GET.get('to', '')
 
         data = {'error': '', 'to': to}
+
         return render_to_response(request, self.TEMPLATE, data=data)
 
     def post(self, request):
@@ -44,12 +45,10 @@ class Login(View):
         if not user.is_superuser:
             data['error'] = 'You do not have permission to log in'
             return render_to_response(request, self.TEMPLATE, data=data)
-
         login(request, user)
 
         if to:
             return redirect(to)
-
         return redirect(reverse('dashboard_index'))
 
 

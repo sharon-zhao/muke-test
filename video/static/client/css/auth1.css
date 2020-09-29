@@ -7,11 +7,14 @@
 .form input {
     display: block;
     width: 100%;
+    margin-top: 10px;
 }
 
 button {
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+  margin-top: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  margin-right: 8px;
 }
 
 .user-area {
@@ -19,4 +22,3 @@ button {
     margin: 20% auto;
     text-align: center;
 }
-

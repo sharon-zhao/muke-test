@@ -1,0 +1,7 @@
+django==2.1.2
+mako==1.0.7
+qiniu
+celery
+django-celery
+celery-with-redis
+redis==2.10.6

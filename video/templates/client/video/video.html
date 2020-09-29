@@ -2,12 +2,14 @@
 <%def name="content()">
 <%! from django.shortcuts import reverse %>
 % for video in videos:
+  % if video.status:
 <div class="video-show">
     <a href="${reverse('client_video_sub', kwargs={'video_id': video.id})}">
       <div class="video-image" style="background-image:url(${video.image});background-size:cover;background-position:center;margin-right:5px;margin-left:5px;"></div>
     </a>
     <p class="video-name"><a href="${reverse('client_video_sub', kwargs={'video_id': video.id})}">${video.name}</a></p>
 </div>
+  %endif
 % endfor
 </%def>
 <%def name="css()">

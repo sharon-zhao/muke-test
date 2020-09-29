@@ -85,16 +85,17 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-     'ENGINE': 'django.db.backends.sqlite3',
-     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'muke_video',
-        # 'USER': 'root',
-        # 'PASSWORD': '',
-        # 'HOST': '127.0.0.1',
-        # 'PORT': 3306
-    }
+    'default':
+     {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         # 'ENGINE': 'django.db.backends.postgresql',
+         # 'NAME': 'dfob2lsjtuip2',
+         # 'USER': 'letzspafvjvyup',
+         # 'PASSWORD': 'cf53ca4b110f80f5e40886c1ad15d227e2d6c2879f9ef7696a47598df984c0d3',
+         # 'HOST': 'ec2-54-197-34-207.compute-1.amazonaws.com',
+         # 'PORT': 5432
+     }
 }
 
 
@@ -139,10 +140,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # qiniu
-# QINIU_AK = config('QINIU_AK')
-# QINIU_SK = config('QINIU_SK')
-# QINIU_VIDEO = config('QINIU_VIDEO')
-# QINIU_VIDEO_URL = config('QINIU_VIDEO_URL')
+
 
 QINIU_AK = 'cw6a94uKsuZNkz8S_jwQYa5FTU2bd8m2Z6s-E_BI'
 QINIU_SK = 'J8Dx-U6uTL-a1KMOgLwJSg8KeyhQX9yo_IbTlYUg'

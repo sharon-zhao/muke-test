@@ -7,33 +7,33 @@ from app.utils.permission import client_auth
 %>
 <img src="${video.image}" class="video-image" />
 <div class="data">
-    <p><span class="span">Name:</span><br />${video.name}</p>
+    <p style="margin-left: 5px;"><span class="span">Name:</span><br />${video.name}</p>
     <p>
-        <span class="span">Actors:</span>
-        <ul>
+        <span style="margin-left: 5px;" class="span">Actors:</span>
+        <ul style="margin-left: 5px;">
         % for man in video.video_star.all():
           <li>${man.name}:${man.ident}</li>
         % endfor
         </ul>
     </p>
     <p>
-        <span class="span">Summary:</span><br />
-        <span class="info">${video.info}</span>
+        <span style="margin-left: 5px;" class="span">Summary:</span><br />
+        <span style="margin-left: 5px;" class="info">${video.info}</span>
     </p>
     <p>
-        <span class="span">Choose episode:</span><br />
+        <span style="margin-left: 5px;" class="span">Choose episode:</span><br />
         % if FromType(video.from_to) == FromType.custom and not client_auth(request):
         <a href="${reverse('client_auth')}">Login</a>
         % else:
         <ul class="number-ul">
         % for data in video.video_sub.all():
-          <li><a href="${data.url}">${data.number}</a></li>
+          <li style="margin-left: 5px;"><a href="${data.url}">${data.number}</a></li>
         % endfor
         </ul>
         % endif
     </p>
     <p>
-        <span class="span">Comment Area</span><br />
+        <span style="margin-left: 5px;" class="span">Comment Area</span><br />
         <div class="comment-area">
           % if user:
           <textarea id="comment-content"></textarea>${csrf_token}
@@ -44,21 +44,25 @@ from app.utils.permission import client_auth
         </div>
     </p>
     <div class="comment-show-area">
-        <span class="span">Comment display</span>
+        <span style="margin-left: 5px;" class="span">Comment display</span>
         <div id="ajax-comment-show"></div>
         <ul class="comment-show">
-          % for comment in comments:
-          <li>
-              <span>${comment.content}</span>
-              <span>${comment.user.username}</span>
-          </li>
-          % endfor
+            % for comment in comments:
+               % if comment.user.status == True:
+               <li style="margin-left: 25px;">
+                <span>${comment.content}</span>
+                <span>-- ${comment.user.username}</span>
+
+            </li>
+               %endif
+            % endfor
+
         </ul>
     </div>
 </div>
 </%def>
 <%def name="css()">
-<link href="/static/client/css/video_sub.css" rel="stylesheet" />
+<link href="/static/client/css/video_sub1.css" rel="stylesheet" />
 </%def>
 <%def name="js()">
 <script src="/static/client/js/video_sub.js"></script>
